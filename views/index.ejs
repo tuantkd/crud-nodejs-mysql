@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-header">
+        List player information
+        <a class="btn btn-success" href="players/add-view" role="button">Add new</a>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#No</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Club</th>
+                    <th scope="col">Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% players.forEach( (player, key)=>{ %>
+
+                    <tr>
+                        <th>
+                            <%- key+1 %>
+                        </th>
+                        <th>
+                            <%- player.id %>
+                        </th>
+                        <td>
+                            <%- player.name %>
+                        </td>
+                        <td>
+                            <%- player.club %>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="players/edit/<%- player.id %>" role="button">Edit</a>
+
+                            <a class="btn btn-danger" onclick="return confirm('Are you sure you want');"
+                                href="players/delete/<%- player.id %>" role=" button">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>

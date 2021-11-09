@@ -1,0 +1,17 @@
+<h2 class="text-center">Form Edit Data</h2>
+
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <form action="/api/players/update/<%- edit_player.id %>?_method=PUT" method="post">
+            <div class="mb-3">
+                <label for="inputName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="inputName" name="inputName" value="<%- edit_player.name %>">
+            </div>
+            <div class="mb-3">
+                <label for="inputClub" class="form-label">Club</label>
+                <input type="text" class="form-control" id="inputClub" name="inputClub" value="<%- edit_player.club %>">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</div>
